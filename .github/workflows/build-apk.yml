@@ -24,6 +24,9 @@ jobs:
       - name: Instalar plataforma y build-tools necesarios
         run: sdkmanager "platforms;android-34" "build-tools;34.0.0" "platform-tools"
 
+      - name: Generar el wrapper de Gradle desde cero
+        run: gradle wrapper --gradle-version 8.7 --distribution-type bin
+
       - name: Dar permisos de ejecución a gradlew
         run: chmod +x ./gradlew
 
